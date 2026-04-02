@@ -1,34 +1,5 @@
 # SDET Autotests — Practice Automation Form
 
-UI automated tests for [https://practice-automation.com/form-fields/](https://practice-automation.com/form-fields/)
-
-## Tech Stack
-
-- Python 3.12
-- Selenium WebDriver (Chrome)
-- PyTest
-- Allure Reports
-- webdriver-manager
-
-## Design Patterns
-
-- **Page Object Model** — page interactions encapsulated in `pages/form_fields_page.py`
-- **Page Factory** — locators defined as class-level constants (CSS, XPath, ID)
-- **Fluent Interface** — all action methods return `self` for method chaining
-
-## Project Structure
-
-```
-├── conftest.py                 # WebDriver fixture, Allure failure screenshots
-├── pytest.ini                  # PyTest config
-├── requirements.txt            # Dependencies
-├── pages/
-│   ├── base_page.py            # BasePage with common actions
-│   └── form_fields_page.py     # FormFieldsPage (Page Object)
-└── tests/
-    └── test_form_fields.py     # Test cases
-```
-
 ## Setup
 
 ```bash
@@ -51,7 +22,7 @@ allure serve allure-results
 
 ## Test Cases
 
-### Test 1: Fill and Submit Form (`test_fill_and_submit_form`)
+### Test 1: Открыть и отправить форму (`test_fill_and_submit_form`)
 
 **Precondition:** Open browser, navigate to https://practice-automation.com/form-fields/
 
@@ -66,7 +37,7 @@ allure serve allure-results
 | 7 | Count tools in "Automation tools" list, enter count and longest tool name in Message | Message contains "5, Katalon Studio" |
 | 8 | Click Submit | Alert with text "Message received!" appears |
 
-### Test 2 — Positive Validation (`test_positive_valid_submission`)
+### Test 2 — Позитивная валидация (`test_positive_valid_submission`)
 
 **Precondition:** Open browser, navigate to form page.
 
@@ -81,7 +52,7 @@ allure serve allure-results
 | 7 | Fill Message with "Test message" | Field contains value |
 | 8 | Click Submit | Alert with text "Message received!" appears |
 
-### Test 3 — Negative Validation (`test_negative_empty_name`)
+### Test 3 — Негативная валидация (`test_negative_empty_name`)
 
 **Precondition:** Open browser, navigate to form page.
 
